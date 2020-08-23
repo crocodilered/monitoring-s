@@ -66,17 +66,17 @@ if __name__ == '__main__':
         'aggs': {
             'hosts': {
                 'terms': {'field': 'host.keyword'},
-                "aggs": {
+                'aggs': {
                     'dt_histogram': {
-                        "date_histogram": {
-                            "field": "timestamp",
-                            "calendar_interval": "day",
+                        'date_histogram': {
+                            'field': 'timestamp',
+                            'calendar_interval': 'day',
                             'min_doc_count': 0,
                         },
                         'aggs': {
-                            "sum_bytes": {
-                                "sum": {
-                                    "field": "bytes"
+                            'sum_bytes': {
+                                'sum': {
+                                    'field': 'bytes'
                                 }
                             }
                         }
